@@ -1,10 +1,8 @@
 # API Java pour Manipuler le Système de Fichiers Distribué Hadoop (HDFS) (Uder development...🚀)
-## Introduuction 
+## Introduction 
 Une API en Java pour interagir avec le Hadoop Distributed File System (HDFS). Cette API offre des fonctionnalités pour la lecture et l'écriture de données dans le HDFS. La première partie du projet se concentre sur l'écriture de données dans un fichier HDFS à l'aide de l'API Java. Dans la deuxième partie, une application est développée pour lire un fichier depuis le HDFS et le réécrire dans le système de fichiers local. Ce référentiel vise à fournir un ensemble d'exemples et de fonctionnalités permettant aux développeurs d'intégrer HDFS dans leurs applications Java.
 
-## Lecture depuis HDFS en Java
-
-### Dépendances Maven
+## Dépendances Maven
 ```xml
 <dependency>
     <groupId>org.apache.hadoop</groupId>
@@ -12,6 +10,8 @@ Une API en Java pour interagir avec le Hadoop Distributed File System (HDFS). Ce
     <version>2.7.3</version>
 </dependency>
 ```
+
+## Lecture depuis HDFS en Java
 
 ### Code Java
 ```java
@@ -35,3 +35,24 @@ public class Read {
 
 ### Résultats
 ![Reading](assets/reading.png)
+
+## Écriture dans HDFS en Java
+
+### Code Java
+```java
+public class Write {
+    public static void main(String[] args) throws IOException {
+        Configuration configuration = new Configuration();
+        configuration.set("fs.defaultFS", "hdfs://localhost:9000");
+        FileSystem fs = FileSystem.get(configuration);
+        Path path = new Path("/BDDC/CPP/Cours/CoursCPP1");
+        FSDataOutputStream fsdos = fs.create(path);
+        BufferedWriter br = new BufferedWriter(new OutputStreamWriter(fsdos, StandardCharsets.UTF_8));
+        br.write("BDDC 2");
+        br.newLine();
+        br.write("BDDC 2");
+        br.close();
+        fs.close();
+    }
+}
+```
