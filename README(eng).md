@@ -1,4 +1,4 @@
-# Java API for Interacting with Hadoop Distributed File System (HDFS) (Uder development...🚀)
+# Java API for Interacting with Hadoop Distributed File System (HDFS) 
 ## Introduction
 A Java API for interacting with the Hadoop Distributed File System (HDFS). This API facilitates reading and writing data in HDFS. The first part of the project focuses on writing data to an HDFS file using the Java API. In the second part, an application is developed to read a file from HDFS and rewrite it in the local file system. This repository aims to offer a set of examples and functionalities for developers to seamlessly integrate HDFS into their Java applications.
 
