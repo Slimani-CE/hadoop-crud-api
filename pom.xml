@@ -7,7 +7,14 @@
   <packaging>pom</packaging>
   <name>Archetype - hadoop-crud-api</name>
   <url>http://maven.apache.org</url>
-  <modules>
-    <module>com.slimani-ce.app</module>
-  </modules>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-client</artifactId>
+      <version>2.7.3</version>
+    </dependency>
+  </dependencies>
 </project>
+
